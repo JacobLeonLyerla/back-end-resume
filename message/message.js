@@ -12,6 +12,10 @@ const Message = new mongoose.Schema({
   message: {
     type: String,
     default:"None Given"
+  }, 
+   company: {
+    type: String,
+    default:"None Given"
   },
   dateOfMessage: {
     type: Date,
