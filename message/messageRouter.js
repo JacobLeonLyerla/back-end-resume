@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Messages = require('./message');
+const Message = require('./message');
 
 
 // add endpoints here
@@ -17,7 +17,7 @@ router.get('/',(req,res)=>{
     })
 router
 .post('/',(req,res)=>{
-    const messages = new Messages(req.body);
+    const messages = new Message(req.body);
 
     messages
     .save()
