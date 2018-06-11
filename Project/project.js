@@ -19,7 +19,7 @@ const Project = new mongoose.Schema({
   youtube: String,
   img: {
     type: String,
-    default: "test url"
+    default: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
   },
   addedOn: {
     type: Date,
