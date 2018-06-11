@@ -19,7 +19,7 @@ const Project = new mongoose.Schema({
   youtube: String,
   img: {
     type: String,
-    default: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+    default: "https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
   },
   addedOn: {
     type: Date,
