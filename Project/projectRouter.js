@@ -3,7 +3,7 @@ const router = require('express').Router();
 
 const Project =require('./project');
 // add in route handlers for post and get
-Router.get('/:id',(req,res)=>{
+router.get('/:id',(req,res)=>{
     const{id}=req.params
     Project
     .findById(id)
