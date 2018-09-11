@@ -8,6 +8,10 @@ const Project = new mongoose.Schema({
     required: true
   },
   description: String,
+  webpage:{
+type:String,
+default:"This code is not deployed."
+  },
   github: {
     type: String,
     required: true
@@ -24,6 +28,10 @@ const Project = new mongoose.Schema({
   addedOn: {
     type: Date,
     default: Date.now
+  },
+  technologies:{
+    type:Array,
+    required:true,
   }
 });
 
