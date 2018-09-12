@@ -17,7 +17,6 @@ router.get('/:id',(req,res)=>{
 router.get('/', (req,res)=>{
     Project
     .find()
-    .sort('-rating')
     .then(response=>{
         res.status(200).json(response)
     })

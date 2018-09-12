@@ -32,7 +32,8 @@ default:"This code is not deployed."
   technologies:{
     type:Array,
     required:true,
-  }
+  },
+  
 });
 
 // export the mongoose model
