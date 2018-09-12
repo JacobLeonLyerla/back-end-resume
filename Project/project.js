@@ -33,7 +33,7 @@ default:"This code is not deployed."
     type:Array,
     required:true,
   },
-  
+  index:Number
 });
 
 // export the mongoose model
