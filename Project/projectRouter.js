@@ -16,8 +16,8 @@ router.get('/:id',(req,res)=>{
 })
 router.get('/', (req,res)=>{
     Project
-    .select("-title")
     .find()
+    .select("-title")
     .then(response=>{
         res.status(200).json(response)
     })
