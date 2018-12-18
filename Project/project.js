@@ -34,6 +34,7 @@ default:"This code is not deployed."
     required:true,
   },
   index:Number
+
 });
 
 // export the mongoose model
