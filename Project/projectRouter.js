@@ -1,56 +1,53 @@
 // first we need to require express router and require the model.
-const router = require('express').Router();
+const router = require("express").Router();
 
-const Project =require('./project');
+const Project = require("./project");
 // add in route handlers for post and get
 
-router.get('/:id',(req,res)=>{
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
 
-    const{id}=req.params
+  Project.findById(id)
 
-    Project
-    .findById(id)
+    .then(response => {
+      res.status(202).json(response);
+    })
 
-    .then(response=>{
-        res.status(202).json(response);
+    .catch(err => {
+      res
+        .status(500)
+        .json({
+          errorMessage: "The Project information could not be retrieved."
+        });
+    });
+});
 
- })
-
- .catch(err=>{
-     res.status(500).json({errorMessage: "The Project information could not be retrieved."})
- })
-})
-
-router.get('/', (req,res)=>{
-    Project
-    .find()
+router.get("/", (req, res) => {
+  Project.find()
     .select("-title")
-    .then(response=>{
-        res.status(200).json(response)
+    .then(response => {
+      res.status(200).json(response);
     })
 
-    .catch(err=>{
-        res.status(500).json({error:err})
-    })
+    .catch(err => {
+      res.status(500).json({ error: err });
+    });
+});
 
-})
+router.post("/", (req, res) => {
+  const project = new Project(req.body);
 
-router
-.post('/',(req,res)=>{
-    const project = new Project(req.body)
-
-    project
+  project
     .save()
 
-    .then(response=>{
-        res.status(201).json(response)
+    .then(response => {
+      res.status(201).json(response);
     })
 
-    .catch(err=>{
-        res.status(500).json({error:err})
-    })
-
-})
+    .catch(err => {
+      res.status(500).json({ error: err });
+    });
+});
 
 // export the router
 module.exports = router;
