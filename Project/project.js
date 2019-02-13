@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 
 // set a new variable, that will be set to a new mongoose schema.
 const Project = new mongoose.Schema({
-
   // declare the modal variables.
   title: {
     type: String,
@@ -13,10 +12,10 @@ const Project = new mongoose.Schema({
 
   description: String,
 
-  webpage:{
-type:String,
+  webpage: {
+    type: String,
 
-default:"This code is not deployed."
+    default: "This code is not deployed."
   },
 
   github: {
@@ -25,10 +24,10 @@ default:"This code is not deployed."
     required: true
   },
 
-  rating:{
-      type:Number,
+  rating: {
+    type: Number,
 
-      required:true
+    required: true
   },
 
   youtube: String,
@@ -36,7 +35,8 @@ default:"This code is not deployed."
   img: {
     type: String,
 
-    default: "https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
+    default:
+      "https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
   },
 
   addedOn: {
@@ -45,14 +45,13 @@ default:"This code is not deployed."
     default: Date.now
   },
 
-  technologies:{
-    type:Array,
+  technologies: {
+    type: Array,
 
-    required:true,
+    required: true
   },
-  
-  index:Number
 
+  index: Number
 });
 
 // export the mongoose model
