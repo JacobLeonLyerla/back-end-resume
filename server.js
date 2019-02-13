@@ -9,7 +9,7 @@ const messageRouter = require("./message/messageRouter");
 
 const projectRouter = require("./Project/projectRouter");
 
-const {username,password} =require("./credentials");
+const { username, password } = require("./credentials");
 //******************************************* ASSIGNING THE SERVER AND SETTING MIDDLEWARE
 const server = express();
 
@@ -28,12 +28,10 @@ server.use("/projects", projectRouter);
 mongoose
 
   .connect(
-
-      // this is calling my database, it takes my username and my password,
-     // the username and password is being stored in another file and imported
+    // this is calling my database, it takes my username and my password,
+    // the username and password is being stored in another file and imported
     `mongodb://${username}:${password}@ds147030.mlab.com:47030/resume`
-  
-    )
+  )
   // this will log if the promise was completed and i was connected
   .then(open => {
     console.log("connected to db");
@@ -46,17 +44,14 @@ mongoose
 
 // this is just a test route so that you can see if the router is running when you open it without having to type a route in.
 server.get("/", (req, res) => {
-
   res.status(200).json({ api: `api running on port ${port}` });
-
 });
 
 //***************************************** SERVER LISTEN
-// this will set the port to the proecess enviorment Port or port 5000 if it is running locally, 
+// this will set the port to the proecess enviorment Port or port 5000 if it is running locally,
 
 const port = process.env.PORT || 5000;
 
 // this will listen to the port that was set above and the log the correct port
 
 server.listen(port, () => console.log(`\n=== API up on port: ${port} ===\n`));
-
