@@ -20,7 +20,9 @@ router.get("/", (req, res) => {
     // if the find promise did work the catch will give a 500 status and send a json error message
 
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
@@ -42,8 +44,7 @@ router.post("/", (req, res) => {
 
     .catch(err => {
       res.status(500).json({
-        err:
-          "This response could not be added check their status and try again."
+        err: "This response could not be added check their status and try again."
       });
     });
 });
