@@ -5,7 +5,9 @@ const Project = require("./project");
 // add in route handlers for post and get
 
 router.get("/:id", (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
 
   Project.findById(id)
 
@@ -30,7 +32,9 @@ router.get("/", (req, res) => {
     })
 
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
@@ -45,7 +49,9 @@ router.post("/", (req, res) => {
     })
 
     .catch(err => {
-      res.status(500).json({ error: err });
+      res.status(500).json({
+        error: err
+      });
     });
 });
 
