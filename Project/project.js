@@ -35,8 +35,7 @@ const Project = new mongoose.Schema({
   img: {
     type: String,
 
-    default:
-      "https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
+    default: "https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png"
   },
 
   addedOn: {
