@@ -9,7 +9,10 @@ const messageRouter = require("./message/messageRouter");
 
 const projectRouter = require("./Project/projectRouter");
 
-const { username, password } = require("./credentials");
+const {
+  username,
+  password
+} = require("./credentials");
 //******************************************* ASSIGNING THE SERVER AND SETTING MIDDLEWARE
 const server = express();
 
@@ -44,7 +47,9 @@ mongoose
 
 // this is just a test route so that you can see if the router is running when you open it without having to type a route in.
 server.get("/", (req, res) => {
-  res.status(200).json({ api: `api running on port ${port}` });
+  res.status(200).json({
+    api: `api running on port ${port}`
+  });
 });
 
 //***************************************** SERVER LISTEN
